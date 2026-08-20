@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Café Origen</title>
+    <meta name="description" content="Sitio de una cafetería de estilo, con carrusel interactivo — proyecto demo de portfolio.">
+    <meta property="og:title" content="Café Origen">
+    <meta property="og:description" content="Sitio de una cafetería de estilo, con carrusel interactivo — proyecto demo de portfolio.">
+    <meta property="og:image" content="https://cafeteriaorigen.netlify.app/recursos/principal.webp">
+    <meta property="og:type" content="website">
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="icon" href="recursos/Logo.webp">
+    <link rel="stylesheet" href="recursos/css/style.css">
+
+</head>
+<body>
+    <header class="encabezado-principal">
+        <div class="logo">
+            <a href="index.html"><img src="recursos/Logo.webp" alt="Café Origen"></a>
+            <a href="index.html"><span>Café <em>Origen</em></span></a>
+        </div>
+
+        <div class="menu" id="menuColapsable">
+            <nav>
+                <ul>
+                    <li><a href="index.html" class="activo">Inicio</a></li>
+                    <li><a href="#historia">Nosotros</a></li>
+                    <li><a href="#encontranos">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="cuerpo-principal">
+        <section class="hero">
+            <img src="recursos/principal.webp" alt="Interior de Café Origen" />
+            <div class="hero-contenido">
+                <span class="etiqueta">Tueste propio · Desde 2024</span>
+                <h1>El café que merece tu mañana.</h1>
+                <p>Granos de origen, tostados en casa, preparados por baristas que saben lo que hacen. Un lugar donde detenerse vale la pena.</p>
+                <a href="#encontranos" class="boton-primario">Encontranos</a>
+            </div>
+        </section>
+
+        <section class="espacio" id="historia">
+            <div class="espacio-encabezado">
+                <span class="etiqueta">Más de nosotros</span>
+                <h2>Nuestra historia</h2>
+                <p class="espacio-historia">
+                    Cuentan que todo empezó en 2024, cuando encontramos una tostadora italiana
+                    abandonada en un galpón y decidimos darle una segunda vida. Lo que iba a ser
+                    un experimento de fin de semana se convirtió en Café Origen: un rincón donde
+                    el aroma del grano recién tostado se mezcla con el murmullo de las charlas de
+                    sobremesa. Desde entonces, cada taza sigue guardando un poco de esa curiosidad inicial.
+                </p>
+            </div>
+
+            <div class="carrusel-contenedor">
+                <button type="button" class="carrusel-zona carrusel-zona-izq" aria-label="Desplazar galería hacia la izquierda" data-direccion="-1">
+                    <span>&#8249;</span>
+                </button>
+                <div class="carrusel-espacio">
+                    <img src="recursos/cafe 1.webp" alt="Café con arte latte">
+                    <img src="recursos/cafe 2.webp" alt="Capuchino con crema y cacao">
+                    <img src="recursos/cafe 3.webp" alt="Café con leche y canela">
+                    <img src="recursos/cafe 4.webp" alt="Chocolate caliente">
+                    <img src="recursos/cafe 5.webp" alt="Comida dulce">
+                    <img src="recursos/cafe 6.webp" alt="Galletas y budín">
+                </div>
+                <button type="button" class="carrusel-zona carrusel-zona-der" aria-label="Desplazar galería hacia la derecha" data-direccion="1">
+                    <span>&#8250;</span>
+                </button>
+            </div>
+
+        </section>
+
+        <section class="encuentranos" id="encontranos">
+            <div class="encuentranos-contenedor">
+                <div class="encuentranos-info">
+                    <span class="etiqueta etiqueta-clara">Visitanos</span>
+                    <h2>Encontranos</h2>
+
+                    <div class="dato">
+                        <h3>Dirección</h3>
+                        <p>Calle Falsa 123<br>Barrio Centro<br>Córdoba, Córdoba</p>
+                    </div>
+
+                    <div class="dato">
+                        <h3>Horarios</h3>
+                        <p>Lunes a viernes · 8:00 – 20:00<br>Sábados · 9:00 – 21:00<br>Domingos · 9:00 – 14:00</p>
+                    </div>
+
+                    <div class="dato">
+                        <h3>Contacto</h3>
+                        <p><a href="mailto:hola@cafeorigen.com">hola@cafeorigen.com</a><br><a href="tel:+543804000000">+54 380 400 0000</a><br>@cafeorigen en Instagram</p>
+                    </div>
+                </div>
+
+                <div class="encuentranos-media">
+                    <figure>
+                        <img src="recursos/fachada Cafe.webp" alt="Fachada de Café Origen">
+                        <figcaption>
+                            <strong>Café Origen</strong>
+                            <span>Córdoba, Córdoba</span>
+                        </figcaption>
+                    </figure>
+                    <div class="redes">
+                        <a href="#" target="_blank" rel="noopener">Instagram</a>
+                        <a href="#" target="_blank" rel="noopener">Facebook</a>
+                        <a href="#" target="_blank" rel="noopener">Google Maps</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <img src="recursos/Logo.webp" alt="Café Origen">
+        <p>&copy; 2026 Café Origen. Todos los derechos reservados.</p>
+    </footer>
+    <script src="recursos/js/script.js" defer></script>
+</body>
+</html>
