@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Café Origen</title>
+    <meta name="description" content="Sitio de una cafetería de estilo, con carrusel interactivo — proyecto demo de portfolio.">
+    <meta property="og:title" content="Café Origen">
+    <meta property="og:description" content="Sitio de una cafetería de estilo, con carrusel interactivo — proyecto demo de portfolio.">
+    <meta property="og:image" content="https://cafeteriaorigen.netlify.app/recursos/principal.webp">
+    <meta property="og:type" content="website">
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <link rel="icon" href="recursos/Logo.webp">
+    <link rel="stylesheet" href="recursos/css/style.css">
+
+</head>
+<body>
+    <header class="encabezado-principal">
+        <div class="logo">
+            <a href="index.html"><img src="recursos/Logo.webp" alt="Café Origen"></a>
+            <a href="index.html"><span>Café <em>Origen</em></span></a>
+        </div>
+
+        <button type="button" class="menu-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="menuColapsable">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <div class="menu" id="menuColapsable">
+            <nav>
+                <ul>
+                    <li><a href="index.html" class="activo">Inicio</a></li>
+                    <li><a href="#menu">Menú</a></li>
+                    <li><a href="#resenas">Reseñas</a></li>
+                    <li><a href="#historia">Nosotros</a></li>
+                    <li><a href="#encontranos">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="cuerpo-principal">
+        <section class="hero">
+            <img src="recursos/principal.webp" alt="Interior de Café Origen" />
+            <div class="hero-contenido">
+                <span class="etiqueta">Tueste propio · Desde 2024</span>
+                <h1>El café que merece tu mañana.</h1>
+                <p>Granos de origen, tostados en casa, preparados por baristas que saben lo que hacen. Un lugar donde detenerse vale la pena.</p>
+                <a href="#encontranos" class="boton-primario">Encontranos</a>
+            </div>
+        </section>
+
+        <section class="espacio" id="historia">
+            <div class="espacio-encabezado">
+                <span class="etiqueta">Más de nosotros</span>
+                <h2>Nuestra historia</h2>
+                <p class="espacio-historia">
+                    Cuentan que todo empezó en 2024, cuando encontramos una tostadora italiana
+                    abandonada en un galpón y decidimos darle una segunda vida. Lo que iba a ser
+                    un experimento de fin de semana se convirtió en Café Origen: un rincón donde
+                    el aroma del grano recién tostado se mezcla con el murmullo de las charlas de
+                    sobremesa. Desde entonces, cada taza sigue guardando un poco de esa curiosidad inicial.
+                </p>
+            </div>
+
+            <div class="carrusel-contenedor">
+                <button type="button" class="carrusel-zona carrusel-zona-izq" aria-label="Desplazar galería hacia la izquierda" data-direccion="-1">
+                    <span>&#8249;</span>
+                </button>
+                <div class="carrusel-espacio">
+                    <img src="recursos/cafe-latte.webp" alt="Café con arte latte">
+                    <img src="recursos/capuchino.webp" alt="Capuchino con crema y cacao">
+                    <img src="recursos/cafe-canela.webp" alt="Café con leche y canela">
+                    <img src="recursos/chocolate.webp" alt="Chocolate caliente">
+                    <img src="recursos/comida.webp" alt="Comida dulce">
+                    <img src="recursos/galletas.webp" alt="Galletas y budín">
+                </div>
+                <button type="button" class="carrusel-zona carrusel-zona-der" aria-label="Desplazar galería hacia la derecha" data-direccion="1">
+                    <span>&#8250;</span>
+                </button>
+            </div>
+
+        </section>
+
+        <section class="espacio carta" id="menu">
+            <div class="espacio-encabezado">
+                <span class="etiqueta">Nuestra carta</span>
+                <h2>Algo rico para cada momento.</h2>
+                <p class="espacio-historia">Café de especialidad, cocina de estación y combinaciones hechas para disfrutarlas sin apuro.</p>
+            </div>
+
+            <div class="carta-selector" role="tablist" aria-label="Categorías del menú">
+                <button type="button" class="carta-pill activo" id="tab-desayuno" role="tab" aria-selected="true" aria-controls="panel-desayuno" tabindex="0">Desayuno</button>
+                <button type="button" class="carta-pill" id="tab-almuerzo" role="tab" aria-selected="false" aria-controls="panel-almuerzo" tabindex="-1">Almuerzo</button>
+                <button type="button" class="carta-pill" id="tab-merienda" role="tab" aria-selected="false" aria-controls="panel-merienda" tabindex="-1">Merienda</button>
+                <button type="button" class="carta-pill" id="tab-cena" role="tab" aria-selected="false" aria-controls="panel-cena" tabindex="-1">Cena</button>
+                <button type="button" class="carta-pill" id="tab-promos" role="tab" aria-selected="false" aria-controls="panel-promos" tabindex="-1">Promos</button>
+            </div>
+
+            <div class="carta-paneles">
+                <!-- Datos de ejemplo: reemplazar productos y precios directamente en cada panel. -->
+                <div class="carta-panel" id="panel-desayuno" role="tabpanel" aria-labelledby="tab-desayuno" tabindex="0">
+                    <article class="producto"><img src="recursos/cafe con medialunas.webp" alt="Café con leche y medialunas"><div class="producto-contenido"><h3>Café con leche y medialunas</h3><p>Café con leche, dos medialunas de manteca</p><strong>$4.200</strong></div></article>
+                    <article class="producto"><img src="recursos/tostados.webp" alt="Tostado de jamón y queso"><div class="producto-contenido"><h3>Tostado de jamón y queso</h3><p>Pan de campo, jamón cocido, queso tybo</p><strong>$5.300</strong></div></article>
+                    <article class="producto"><img src="recursos/yogurt con granola.webp" alt="Bowl de yogur con granola"><div class="producto-contenido"><h3>Bowl de yogur con granola</h3><p>Yogur natural, granola casera, frutos rojos</p><strong>$4.800</strong></div></article>
+                </div>
+
+                <div class="carta-panel" id="panel-almuerzo" role="tabpanel" aria-labelledby="tab-almuerzo" tabindex="0" hidden>
+                    <article class="producto"><img src="recursos/sandwich de milanesa.webp" alt="Sandwich de milanesa"><div class="producto-contenido"><h3>Sandwich de milanesa</h3><p>Milanesa de ternera, lechuga, tomate, mayonesa casera, pan de campo</p><strong>$7.200</strong></div></article>
+                    <article class="producto"><img src="recursos/ensalada cesar.webp" alt="Ensalada césar con pollo"><div class="producto-contenido"><h3>Ensalada césar con pollo</h3><p>Pollo grillado, lechuga, parmesano, crutones, aderezo césar</p><strong>$6.800</strong></div></article>
+                    <article class="producto"><img src="recursos/tarta-verduras.webp" alt="Tarta de verdura"><div class="producto-contenido"><h3>Tarta de verdura</h3><p>Tarta de acelga y ricota, ensalada mixta</p><strong>$6.300</strong></div></article>
+                </div>
+
+                <div class="carta-panel" id="panel-merienda" role="tabpanel" aria-labelledby="tab-merienda" tabindex="0" hidden>
+                    <article class="producto"><img src="recursos/scones.webp" alt="Té con scones"><div class="producto-contenido"><h3>Té con scones</h3><p>Té a elección, scones caseros con mermelada y crema</p><strong>$4.500</strong></div></article>
+                    <article class="producto"><img src="recursos/churros.webp" alt="Chocolate con churros"><div class="producto-contenido"><h3>Chocolate con churros</h3><p>Chocolate caliente, tres churros rellenos</p><strong>$5.100</strong></div></article>
+                    <article class="producto"><img src="recursos/budín de limón.webp" alt="Café con budín de limón"><div class="producto-contenido"><h3>Café con budín de limón</h3><p>Café a elección, porción de budín de limón</p><strong>$4.600</strong></div></article>
+                </div>
+
+                <div class="carta-panel" id="panel-cena" role="tabpanel" aria-labelledby="tab-cena" tabindex="0" hidden>
+                    <article class="producto"><img src="recursos/tabla de fiambres.webp" alt="Tabla para compartir"><div class="producto-contenido"><h3>Tabla para compartir</h3><p>Quesos, fiambres, pan casero, aceitunas</p><strong>$9.500</strong></div></article>
+                    <article class="producto"><img src="recursos/wrap.webp" alt="Wrap de vegetales grillados"><div class="producto-contenido"><h3>Wrap de vegetales grillados</h3><p>Wrap integral, vegetales grillados, hummus</p><strong>$6.900</strong></div></article>
+                    <article class="producto"><img src="recursos/sopa de calabaza.webp" alt="Sopa de calabaza con pan casero"><div class="producto-contenido"><h3>Sopa de calabaza con pan casero</h3><p>Sopa cremosa de calabaza, pan casero</p><strong>$5.800</strong></div></article>
+                </div>
+
+                <div class="carta-panel" id="panel-promos" role="tabpanel" aria-labelledby="tab-promos" tabindex="0" hidden>
+                    <article class="producto"><img src="recursos/cafe con medialunas.webp" alt="Combo Mañana"><div class="producto-contenido"><h3>Combo Mañana</h3><p>Café con leche + 2 medialunas</p><strong>$5.800 <del>$6.400</del></strong></div></article>
+                    <article class="producto"><img src="recursos/scones.webp" alt="Combo Tarde"><div class="producto-contenido"><h3>Combo Tarde</h3><p>Té o café + scone + jugo</p><strong>$6.200 <del>$7.100</del></strong></div></article>
+                </div>
+            </div>
+        </section>
+
+        <section class="espacio resenas" id="resenas">
+            <div class="espacio-encabezado">
+                <span class="etiqueta">Lo que dicen de nosotros</span>
+                <h2>Una mesa compartida también se recuerda.</h2>
+                <a class="boton-primario" href="#">Dejanos tu reseña en Google</a>
+            </div>
+
+            <div class="pared-resenas" aria-label="Reseñas de clientes">
+                <div class="resenas-columna" data-velocidad="34" data-direccion="-1">
+                    <div class="resenas-pista">
+                        <article class="resena-card" tabindex="0" aria-label="Reseña de Martina G., 5 estrellas"><div class="resena-meta"><strong>Martina G.</strong><span aria-label="5 estrellas">★★★★★</span></div><p>El café con leche mejor que tomé en Córdoba, y las medialunas recién horneadas. Vuelvo seguro.</p></article>
+                        <article class="resena-card" tabindex="0" aria-label="Reseña de Nahuel S., 5 estrellas"><div class="resena-meta"><strong>Nahuel S.</strong><span aria-label="5 estrellas">★★★★★</span></div><p>El tostado de jamón y queso es una locura, lo pido siempre que paso.</p></article>
+                        <article class="resena-card" tabindex="0" aria-label="Reseña de Ignacio M., 4 estrellas"><div class="resena-meta"><strong>Ignacio M.</strong><span aria-label="4 estrellas">★★★★☆</span></div><p>Rico todo, un poco caro para la zona pero vale la pena una vez al mes.</p></article>
+                    </div>
+                </div>
+                <div class="resenas-columna" data-velocidad="39" data-direccion="1">
+                    <div class="resenas-pista">
+                        <article class="resena-card" tabindex="0" aria-label="Reseña de Federico R., 5 estrellas"><div class="resena-meta"><strong>Federico R.</strong><span aria-label="5 estrellas">★★★★★</span></div><p>Ambiente hermoso para trabajar de mañana, wifi rápido y el capuchino es un golazo.</p></article>
+                        <article class="resena-card" tabindex="0" aria-label="Reseña de Camila V., 5 estrellas"><div class="resena-meta"><strong>Camila V.</strong><span aria-label="5 estrellas">★★★★★</span></div><p>Encontré mi cafetería de cabecera. El chocolate caliente con churros es otro nivel.</p></article>
+                        <article class="resena-card" tabindex="0" aria-label="Reseña de Bruno A., 5 estrellas"><div class="resena-meta"><strong>Bruno A.</strong><span aria-label="5 estrellas">★★★★★</span></div><p>Fui por curiosidad y terminé quedándome dos horas leyendo con un café con leche.</p></article>
+                    </div>
+                </div>
+                <div class="resenas-columna" data-velocidad="31" data-direccion="-1">
+                    <div class="resenas-pista">
+                        <article class="resena-card" tabindex="0" aria-label="Reseña de Lucía P., 4 estrellas"><div class="resena-meta"><strong>Lucía P.</strong><span aria-label="4 estrellas">★★★★☆</span></div><p>Buenísima la atención, aunque un sábado a la tarde estaba bastante lleno.</p></article>
+                        <article class="resena-card" tabindex="0" aria-label="Reseña de Sol Fernández, 5 estrellas"><div class="resena-meta"><strong>Sol Fernández</strong><span aria-label="5 estrellas">★★★★★</span></div><p>La tarta de verdura estaba espectacular, y el lugar es muy fotogénico.</p></article>
+                        <article class="resena-card" tabindex="0" aria-label="Reseña de Valentina D., 5 estrellas"><div class="resena-meta"><strong>Valentina D.</strong><span aria-label="5 estrellas">★★★★★</span></div><p>El mejor lugar para la merienda con amigas, los scones son caseros de verdad.</p></article>
+                    </div>
+                </div>
+                <div class="resenas-columna" data-velocidad="42" data-direccion="1">
+                    <div class="resenas-pista">
+                        <article class="resena-card" tabindex="0" aria-label="Reseña de Tomás L., 4 estrellas"><div class="resena-meta"><strong>Tomás L.</strong><span aria-label="4 estrellas">★★★★☆</span></div><p>Buena onda del personal, la carta podría tener más opciones sin gluten.</p></article>
+                        <article class="resena-card" tabindex="0" aria-label="Reseña de Agustina C., 5 estrellas"><div class="resena-meta"><strong>Agustina C.</strong><span aria-label="5 estrellas">★★★★★</span></div><p>Vine por el chip NFC de la mesa y terminé sacando fotos para mi Instagram, hermoso lugar.</p></article>
+                        <article class="resena-card" tabindex="0" aria-label="Reseña de Ezequiel N., 5 estrellas"><div class="resena-meta"><strong>Ezequiel N.</strong><span aria-label="5 estrellas">★★★★★</span></div><p>El wrap de vegetales grillados es mi almuerzo favorito de la semana.</p></article>
+                    </div>
+                </div>
+                <div class="resenas-columna" data-velocidad="36" data-direccion="-1">
+                    <div class="resenas-pista">
+                        <article class="resena-card" tabindex="0" aria-label="Reseña de Rocío B., 5 estrellas"><div class="resena-meta"><strong>Rocío B.</strong><span aria-label="5 estrellas">★★★★★</span></div><p>Atención diez, café diez, precio justo. Recomendadísimo.</p></article>
+                        <article class="resena-card" tabindex="0" aria-label="Reseña de Franco T., 4 estrellas"><div class="resena-meta"><strong>Franco T.</strong><span aria-label="4 estrellas">★★★★☆</span></div><p>Buenísimo para desayunar antes del laburo, aunque a veces tarda un poco en hora pico.</p></article>
+                        <article class="resena-card" tabindex="0" aria-label="Reseña de Milagros H., 5 estrellas"><div class="resena-meta"><strong>Milagros H.</strong><span aria-label="5 estrellas">★★★★★</span></div><p>La combinación de café de especialidad con el trato cálido lo hace único en el barrio.</p></article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="encuentranos" id="encontranos">
+            <div class="encuentranos-contenedor">
+                <div class="encuentranos-info">
+                    <span class="etiqueta etiqueta-clara">Visitanos</span>
+                    <h2>Encontranos</h2>
+
+                    <div class="dato">
+                        <h3>Dirección</h3>
+                        <p>Calle Falsa 123<br>Barrio Centro<br>Córdoba, Córdoba</p>
+                    </div>
+
+                    <div class="dato">
+                        <h3>Horarios</h3>
+                        <p>Lunes a viernes · 8:00 – 20:00<br>Sábados · 9:00 – 21:00<br>Domingos · 9:00 – 14:00</p>
+                    </div>
+
+                    <div class="dato">
+                        <h3>Contacto</h3>
+                        <p><a href="mailto:hola@cafeorigen.com">hola@cafeorigen.com</a><br><a href="tel:+543804000000">+54 380 400 0000</a><br>@cafeorigen en Instagram</p>
+                    </div>
+                </div>
+
+                <div class="encuentranos-media">
+                    <figure>
+                        <img src="recursos/fachada Cafe.webp" alt="Fachada de Café Origen">
+                        <figcaption>
+                            <strong>Café Origen</strong>
+                            <span>Córdoba, Córdoba</span>
+                        </figcaption>
+                    </figure>
+                    <div class="redes">
+                        <a href="#" target="_blank" rel="noopener">Instagram</a>
+                        <a href="#" target="_blank" rel="noopener">Facebook</a>
+                        <a href="#" target="_blank" rel="noopener">Google Maps</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <img src="recursos/Logo.webp" alt="Café Origen">
+        <p>&copy; 2026 Café Origen. Todos los derechos reservados.</p>
+    </footer>
+    <script src="recursos/js/script.js" defer></script>
+</body>
+</html>
+
